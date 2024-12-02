@@ -1,50 +1,76 @@
-# Welcome to your Expo app 👋
+# PaystackApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple React Native Expo application for integrating Paystack payment gateway. This app demonstrates how to allow users to make payments seamlessly using Paystack's WebView-based checkout.
 
-## Get started
+## Features
 
-1. Install dependencies
+* A "Pay Now" button to initiate the payment process.
+* Secure payment integration with Paystack.
+* Sandbox environment for testing.
+* Easy to customize for live payments.
 
-   ```bash
-   npm install
-   ```
+## Prerequisites
 
-2. Start the app
+* Node.js and npm installed.
+* Expo CLI installed globally.
+* A Paystack account with access to API keys.
 
-   ```bash
-    npx expo start
-   ```
+## Getting Started
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+1. Clone the Repository
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+git clone https://github.com/yourusername/PaystackApp.git
+cd PaystackApp
+```
 
-## Learn more
+2. Install Dependencies
+```
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Configure Environment Variables
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Create a .env file in the root directory and add your Paystack public key:
 
-## Join the community
+```
+PAYSTACK_PUBLIC_KEY=your-paystack-public-key-here
+```
 
-Join our community of developers creating universal apps.
+4. Start the Development Server
+```
+expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Folder Structure
+```
+PaystackApp/
+├── App.js                    # Main entry point
+├── components/
+│   └── PayButton.js          # Paystack payment button (optional)
+├── screens/
+│   └── PaymentScreen.js      # WebView for Paystack checkout
+├── .env                      # Environment variables (Paystack API key)
+├── package.json              # Project dependencies
+
+```
+
+## Usage
+
+1. * Run the App: Launch the app using the Expo Go app or an emulator.
+
+2. * Make a Payment:
+* Tap the "Pay Now" button.
+* The app redirects to a WebView with the Paystack payment gateway.
+
+
+3. * Test Payments:
+* Use Paystack's test cards from their documentation.
+* Example:
+* Card Number: 4084084084084081
+* Expiry Date: Any valid future date
+* CVV: 408
+
+## Testing
+
+This app uses Paystack's sandbox mode by default. Replace the PAYSTACK_PUBLIC_KEY in the .env file with your live key to enable real payments.
